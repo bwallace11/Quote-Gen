@@ -64,7 +64,7 @@ function startMouthFlap() {
     if (!isTalking) return;
     open = !open;
     character.src = open ? MOUTH_OPEN : MOUTH_CLOSED;
-  }, 120);
+  }, 80);
 }
 
 function typeQuote(text, done) {
