@@ -1,6 +1,6 @@
-/* Import TailwindCSS */
-@import "tailwindcss";
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Diagnostic Styling 
-- Delete when live to world (production phase)
-*/
+/* Diagnostic Styling - remove when in production */
