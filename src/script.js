@@ -7,7 +7,7 @@ const quotes = [
   { quote: "Computers Are Dumb", author: "P.Colin Manikoth" },
   { quote: "Good Good", author: "P.Colin Manikoth)"},
   { quote: "Take A Break", author: "P.Colin Manikoth)"},
-  { quote: "YAY!", author: "P.Colin Manikoth)"},
+  { quote: "YAAAAAY!", author: "P.Colin Manikoth)"},
   { quote: "Get It And Set It", author: "P.Colin Manikoth)"},
   { quote: "Gooder", author: "P.Colin Manikoth)"},
   { quote: "Don't Be Mad At The Machine", author: "P.Colin Manikoth)"}
