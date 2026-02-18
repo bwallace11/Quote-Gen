@@ -1,0 +1,45 @@
+<svg  viewBox="0 0 256 256" role="img">
+  
+  
+  <!-- Shirt -->
+  <path d="M36 240c10-40 50-70 92-70s82 30 92 70" fill="#C7D2FE"/>
+
+  <!-- Collar -->
+  <path d="M96 188l32-20 32 20-28 26h-8z" fill="#FFFFFF"/>
+
+  <!-- Tie -->
+  <rect x="122" y="188" width="12" height="36" fill="#4C1D95"/>
+  <polygon points="128,170 116,188 140,188" fill="#6D28D9"/>
+
+  <!-- Neck -->
+  <rect x="108" y="150" width="40" height="24" rx="8" fill="#E2B28C"/>
+
+  <!-- Face -->
+  <rect x="68" y="60" width="120" height="100" rx="40" fill="#F1C6A4"/>
+
+  <!-- Ears -->
+  <circle cx="60" cy="110" r="16" fill="#F1C6A4"/>
+  <circle cx="196" cy="110" r="16" fill="#F1C6A4"/>
+
+  <!-- Hair -->
+  <path d="M65 115c0-40 28-68 60-68 40 0 64 24 64 60
+           -10-12-26-18-44-18-26 0-48-10-60-22z"
+        fill="#111827"/>
+
+  <!-- Glasses -->
+  <rect x="82" y="98" width="38" height="28" rx="6"
+        stroke="#111827" stroke-width="5" fill="none"/>
+  <rect x="136" y="98" width="38" height="28" rx="6"
+        stroke="#111827" stroke-width="5" fill="none"/>
+  <line x1="120" y1="112" x2="136" y2="112"
+        stroke="#111827" stroke-width="5"/>
+
+  <!-- Eyes -->
+  <circle cx="101" cy="112" r="5" fill="#111827"/>
+  <circle cx="155" cy="112" r="5" fill="#111827"/>
+
+  <!-- Brows -->
+  <rect x="90" y="86" width="24" height="5" rx="2" fill="#111827"/>
+  <rect x="142" y="86" width="24" height="5" rx="2" fill="#111827"/>
+
+</svg>
