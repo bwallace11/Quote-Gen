@@ -1,45 +1,72 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Randomized Design Inspiration</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colin Quote Generator</title>
+   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
 
-    <!-- Compiled CSS file -->
-     <link rel="stylesheet" href="/src/style.css">
-    <!-- Transpiled JS -->
-    <script src="/src/script.js" type="module" defer></script>
+<body id="body"
+  class="min-h-screen flex items-center justify-center transition-all duration-1000">
 
-  </head>
+  <main class="p-6 w-full max-w-6xl text-center">
 
-<body id="body" class="min-h-screen flex items-center justify-center">
-
-  <!-- Main Content Container   -->
-  <main class="p-8 max-w-2xl w-full relative">
-
-    <h1 class="">
-      Randomized Design Inspiration
+    <h1 class="text-3xl font-bold mb-12 text-white drop-shadow">
+      Colin Quote Generator
     </h1>
 
-    <section class="">
-      <!--   -->
-      <blockquote id="quote-text" class="">
-        "Placeholder. Initial quote. First one loaded."
-      </blockquote>
-      <p id="quote-author" class="">
-        — Placeholder
-      </p>
-    </section>
+    <div class="flex items-center justify-center gap-8">
 
-    <button id="refresh-btn" class="group w-full hover:bg-gray-100 flex items-center justify-center gap-2">
-      <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-      </svg>
-      Reload
-    </button>
+      <!-- Character -->
+      <div class="w-72 shrink-0">
+        <img
+          id="character"
+          src="https://i.postimg.cc/xCMgrxpk/mouthclosedcolin.png"
+          alt="Character"
+          class="w-72 select-none pointer-events-none"
+        />
+      </div>
+
+      <!-- Quote + Button -->
+      <div class="w-[420px] shrink-0 flex flex-col items-start">
+
+        <div id="quote-box" class="w-full transition-transform duration-300">
+
+          <div class="relative bg-white rounded-2xl p-6 shadow-2xl">
+
+            <blockquote
+              id="quote-text"
+              class="text-lg font-semibold text-gray-900 leading-snug min-h-[4rem] text-left">
+              Click reload to generate a quote.
+            </blockquote>
+
+            <p id="quote-author" class="text-sm text-gray-500 mt-3 text-left">
+              —
+            </p>
+
+            <div class="absolute left-0 top-[55%] -translate-x-3 -translate-y-1/2 w-0 h-0
+              border-t-8 border-b-8 border-r-8
+              border-t-transparent border-b-transparent border-r-white">
+            </div>
+
+          </div>
+        </div>
+
+        <button
+          id="refresh-btn"
+          class="mt-6 bg-white hover:bg-gray-100 transition rounded-lg px-8 py-3 font-medium shadow">
+          Random Quote
+        </button>
+
+      </div>
+
+    </div>
 
   </main>
-
+  <script defer src="/src/script.js"></script>
 </body>
 </html>
