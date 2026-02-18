@@ -64,7 +64,7 @@ function startMouthFlap() {
     if (!isTalking) return;
     open = !open;
     character.src = open ? MOUTH_OPEN : MOUTH_CLOSED;
-  }, 80);
+  }, 70);
 }
 
 function typeQuote(text, done) {
@@ -81,7 +81,7 @@ function typeQuote(text, done) {
       clearInterval(typingTimer);
       done();
     }
-  }, 25);
+  }, 20);
 }
 
 function animateQuoteBox() {
