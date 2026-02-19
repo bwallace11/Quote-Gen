@@ -23,9 +23,9 @@ const meshThemes = [
   ["#89f7fe", "#66a6ff"]
 ];
 
-const assetBase = import.meta.env?.BASE_URL || new URL("../", import.meta.url).pathname;
-const MOUTH_CLOSED = `${assetBase}mouthclosedcolin.png`;
-const MOUTH_OPEN = `${assetBase}mouthopencolin.png`;
+
+const MOUTH_CLOSED = `public/mouthclosedcolin.png`;
+const MOUTH_OPEN = `public/mouthopencolin.png`;
 
 const body = document.querySelector("#body");
 const quoteText = document.querySelector("#quote-text");
