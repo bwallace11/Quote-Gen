@@ -23,8 +23,9 @@ const meshThemes = [
   ["#89f7fe", "#66a6ff"]
 ];
 
-const MOUTH_CLOSED = "/mouthclosedcolin.png";
-const MOUTH_OPEN = "/mouthopencolin.png";
+const assetBase = import.meta.env.BASE_URL || "/";
+const MOUTH_CLOSED = `${assetBase}mouthclosedcolin.png`;
+const MOUTH_OPEN = `${assetBase}mouthopencolin.png`;
 
 const body = document.querySelector("#body");
 const quoteText = document.querySelector("#quote-text");
@@ -65,6 +66,13 @@ function startMouthFlap() {
     open = !open;
     character.src = open ? MOUTH_OPEN : MOUTH_CLOSED;
   }, 50);
+}
+
+function preloadMouthImages() {
+  [MOUTH_CLOSED, MOUTH_OPEN].forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
 }
 
 function typeQuote(text, done) {
@@ -117,3 +125,4 @@ refreshBtn.addEventListener("click", getRandomQuote);
 
 // Initial background
 applyMeshGradient();
+preloadMouthImages();
