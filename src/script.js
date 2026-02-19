@@ -23,8 +23,8 @@ const meshThemes = [
   ["#89f7fe", "#66a6ff"]
 ];
 
-const MOUTH_CLOSED = "https://i.postimg.cc/xCMgrxpk/mouthclosedcolin.png";
-const MOUTH_OPEN = "https://i.postimg.cc/m2bjqSYg/mouthopencolin.png";
+const MOUTH_CLOSED = "/mouthclosedcolin.png";
+const MOUTH_OPEN = "/mouthopencolin.png";
 
 const body = document.querySelector("#body");
 const quoteText = document.querySelector("#quote-text");
