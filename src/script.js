@@ -23,7 +23,7 @@ const meshThemes = [
   ["#89f7fe", "#66a6ff"]
 ];
 
-const assetBase = import.meta.env.BASE_URL || "/";
+const assetBase = import.meta.env?.BASE_URL || new URL("../", import.meta.url).pathname;
 const MOUTH_CLOSED = `${assetBase}mouthclosedcolin.png`;
 const MOUTH_OPEN = `${assetBase}mouthopencolin.png`;
 
@@ -42,6 +42,8 @@ let recentQuoteIndices = [];
 // ===== BACKGROUND =====
 
 function applyMeshGradient() {
+  if (!body) return;
+
   const random = meshThemes[Math.floor(Math.random() * meshThemes.length)];
 
   body.style.background = `
@@ -57,10 +59,12 @@ function stopTalking() {
   isTalking = false;
   clearInterval(typingTimer);
   clearInterval(mouthTimer);
-  character.src = MOUTH_CLOSED;
+  if (character) character.src = MOUTH_CLOSED;
 }
 
 function startMouthFlap() {
+  if (!character) return;
+
   let open = false;
   mouthTimer = setInterval(() => {
     if (!isTalking) return;
@@ -77,6 +81,8 @@ function preloadMouthImages() {
 }
 
 function typeQuote(text, done) {
+  if (!quoteText) return;
+
   quoteText.textContent = "";
   let i = 0;
 
@@ -94,6 +100,8 @@ function typeQuote(text, done) {
 }
 
 function animateQuoteBox() {
+  if (!quoteBox) return;
+
   quoteBox.classList.add("translate-y-2", "scale-105");
   setTimeout(() => {
     quoteBox.classList.remove("translate-y-2", "scale-105");
@@ -128,6 +136,7 @@ function getNextQuoteIndex() {
 }
 
 function getRandomQuote() {
+  if (!quoteText || !quoteAuthor) return;
 
   stopTalking();
   animateQuoteBox();
@@ -158,7 +167,9 @@ function getRandomQuote() {
   });
 }
 
-refreshBtn.addEventListener("click", getRandomQuote);
+if (refreshBtn) {
+  refreshBtn.addEventListener("click", getRandomQuote);
+}
 
 // Initial background
 applyMeshGradient();
