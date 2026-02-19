@@ -37,6 +37,7 @@ const quoteBox = document.querySelector("#quote-box");
 let typingTimer;
 let mouthTimer;
 let isTalking = false;
+let recentQuoteIndices = [];
 
 // ===== BACKGROUND =====
 
@@ -101,14 +102,50 @@ function animateQuoteBox() {
 
 // ===== MAIN =====
 
+function getNextQuoteIndex() {
+  const quoteCount = quotes.length;
+
+  if (quoteCount === 0) return -1;
+  if (quoteCount === 1) return 0;
+
+  const lastQuoteIndex = recentQuoteIndices[recentQuoteIndices.length - 1];
+
+  if (quoteCount === 2) {
+    const nonRepeatingIndices = [0, 1].filter((index) => index !== lastQuoteIndex);
+    return nonRepeatingIndices[Math.floor(Math.random() * nonRepeatingIndices.length)];
+  }
+
+  const blockedIndices = recentQuoteIndices.slice(-2);
+  const availableIndices = quotes
+    .map((_, index) => index)
+    .filter((index) => !blockedIndices.includes(index));
+
+  if (availableIndices.length > 0) {
+    return availableIndices[Math.floor(Math.random() * availableIndices.length)];
+  }
+
+  return Math.floor(Math.random() * quoteCount);
+}
+
 function getRandomQuote() {
 
   stopTalking();
   animateQuoteBox();
   applyMeshGradient();
 
-  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomIndex = getNextQuoteIndex();
+  if (randomIndex < 0) {
+    quoteText.textContent = "No quotes available.";
+    quoteAuthor.textContent = "";
+    return;
+  }
+
   const selectedQuote = quotes[randomIndex];
+
+  recentQuoteIndices.push(randomIndex);
+  if (recentQuoteIndices.length > 2) {
+    recentQuoteIndices.shift();
+  }
 
   quoteAuthor.textContent = "";
 
